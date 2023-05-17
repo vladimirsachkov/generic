@@ -1,5 +1,9 @@
 package com.javacode.generics;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class GenericMethods {
 
     public static void main(String[] args) {
@@ -15,6 +19,24 @@ public class GenericMethods {
         System.out.println("Max for array for Integers " + max);
         System.out.println("Max for array for Double " + findMax(doubleArray));
 //        System.out.println("Max for array for String " + findMax(stringArray));
+
+        Number n = Integer.valueOf(20);
+
+//        List<Number> list = new ArrayList<>();
+//        list.add(1);
+//        list.add(2);
+//        list.add(3);
+//        list.add(4);
+//        list.add(6);
+
+
+        printElements(Arrays.asList(intArray));
+
+        MyBox<Integer> myBox = new MyBox<Integer>("");
+
+        Double aDouble = MyBox.returnValue(0.03);
+        System.out.println(aDouble);
+
     }
 
     private static <T>  void printArray(T[] intArray) {
@@ -42,5 +64,11 @@ public class GenericMethods {
         }
 
         return max;
+    }
+
+    private static void printElements(List<Number> list) {
+        for (Number n: list) {
+            System.out.println(n);
+        }
     }
 }
