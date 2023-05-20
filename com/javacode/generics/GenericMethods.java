@@ -30,7 +30,10 @@ public class GenericMethods {
 //        list.add(6);
 
 
-        printElements(Arrays.asList(intArray));
+        List<Integer> integers = Arrays.asList(intArray);
+        List<Double> doubles = Arrays.asList(doubleArray);
+        printElements(integers);
+        printElements(doubles);
 
         MyBox<Integer> myBox = new MyBox<Integer>("");
 
@@ -66,7 +69,7 @@ public class GenericMethods {
         return max;
     }
 
-    private static void printElements(List<Number> list) {
+    private static void printElements(List<? extends Number> list) {
         for (Number n: list) {
             System.out.println(n);
         }
